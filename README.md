@@ -41,8 +41,9 @@ Here’s a condensed view of the output file’s structure:
 # Project Documentation
 
 ## Directory Structure
-
 ```
+
+```markdown
 your_project/
 ├── src/
 │   ├── app.py
