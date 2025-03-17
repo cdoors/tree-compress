@@ -1,49 +1,51 @@
 # TreeCompress
 
-**TreeCompress** is a lightweight, open-source Python script that combines multiple text-based files from your local project into a single Markdown file for easy reference, context sharing, or large-scale text ingestion. Unlike Gitingest or Repomix, TreeCompress is designed for **local** use only, so you can keep your entire codebase or documentation private without uploading it to an external service.
+**TreeCompress** is a lightweight, open-source Python script that combines multiple text-based files from your local project into a single Markdown file for easy reference, context sharing, or large-scale text ingestion. Unlike Gitingest or Repomix, TreeCompress is designed for **local use only**, keeping your codebase or documentation private.
 
 ## How It Works
-1. **Directory Tree Generation**: It scans your project folder to build a tree-like structure of all files and folders, excluding any directories or files you choose to ignore.
-2. **Content Packaging**: It then reads each text-based file (e.g., `.py`, `.js`, `.md`, `.txt`) in UTF-8 mode and writes their contents into a single Markdown file, `all_docs.md`.
-3. **Code Block Formatting**: Files are included with Markdown code fences, preserving syntax highlighting for a wide array of languages and file types.
+
+1. **Directory Tree Generation**: Scans your project folder, building a tree structure of files and folders, excluding directories/files you specify.
+2. **Content Packaging**: Reads each text-based file (e.g., `.py`, `.js`, `.md`, `.txt`) and compiles their contents into a single Markdown file (`all_docs.md`).
+3. **Code Block Formatting**: Files are included with Markdown code fences for syntax highlighting.
 
 ## Why TreeCompress?
-- **Local-Only, No External Upload**: If you prefer not to push your codebase to online platforms like GitHub or GitLab, TreeCompress is an excellent choice to keep everything offline and under your control.
-- **Open Source & Lightweight**: The script is a few lines of Python and can be modified easily to fit your needs.
-- **Large Context Aggregation**: Perfect for local Large Language Model (LLM) workflows that benefit from having an entire repository’s text in a single file.
-- **Customizable**: Add or remove file extensions, change ignore rules, or adapt the script for your specific environment.
+
+- **Local-Only, No External Upload**: Keeps your data offline and private.
+- **Open Source & Lightweight**: Easily modifiable Python script.
+- **Large Context Aggregation**: Ideal for local Large Language Model (LLM) workflows.
+- **Customizable**: Modify file extensions, ignore rules, and language mappings.
 
 ## Installation
-1. **Clone or Download** this repository (or copy the single script file `tree_compress.py` into your project’s root directory).
-2. Ensure you have **Python 3.6+** installed on your system.
+
+1. Clone or download this repository, or copy `tree_compress.py` directly into your project's root directory.
+2. Ensure you have **Python 3.6+** installed.
 
 ## Usage
-From your project’s root directory:
+
+Run the script from your project's root directory:
 
 ```bash
 python tree_compress.py
 ```
 
 ### Configuration
-In the script, you can modify:
-- **Ignore Directories**: (e.g., `.git`, `.venv`, `node_modules`, `__pycache__`)  
-- **Ignore Files**: (e.g., the output Markdown `all_docs.md`, or any other you don’t want included)  
-- **Extension to Language** Mapping: Tweak or extend the code-block language detection.  
 
-After running, you’ll get `all_docs.md` in your project folder containing:
-1. A directory tree overview.
-2. The contents of every UTF-8 readable file wrapped in Markdown code blocks.
+Modify within the script:
+- **Ignored Directories**: e.g., `.git`, `.venv`, `node_modules`, `__pycache__`  
+- **Ignored Files**: e.g., output file `all_docs.md`, or other specific files
+- **Extension to Language Mapping**: Customize code-block language detection.
 
-## Example
-Here’s a condensed view of the output file’s structure:
+After running, you'll have `full_directory.md` containing:
+- A directory tree overview
+- Contents of each file wrapped in Markdown code blocks
+
+## Example Output Structure
 
 ```markdown
 # Project Documentation
 
 ## Directory Structure
-```
 
-```markdown
 your_project/
 ├── src/
 │   ├── app.py
@@ -51,7 +53,6 @@ your_project/
 ├── docs/
 │   └── README.md
 └── requirements.txt
-```
 
 ## File Contents
 
@@ -77,11 +78,14 @@ function greet(name) {
 ```
 
 ## Contributing
-We welcome suggestions, bug reports, and feature requests! Feel free to open an issue or submit a pull request if you have ideas for improvement. Because this tool runs entirely locally, you can safely fork and modify it to fit your own security or workflow requirements.
+
+Suggestions, bug reports, and feature requests are welcome! Open an issue or submit a pull request. Feel free to fork and modify the tool to fit your own workflow.
 
 ## License
-This project is licensed under the [MIT License](LICENSE). Feel free to use it in personal, academic, or commercial projects. 
+
+Licensed under the [MIT License](LICENSE). Feel free to use it for personal, academic, or commercial projects.
 
 ---
 
-Feel free to rename the script or adapt its functionality to match your exact needs!
+Adapt the script freely to match your exact needs!
+
